@@ -15,14 +15,14 @@ pip install gdown
 pip install matplotlib
 ```
 
-MPNNs:
+Running MPNNs on meidum graphs:
 ```bash
 sh run_bn.sh 0 > mpnn_bn.txt 2>&1 &
 ```
 
 The results of the hyperparameter tuning are in the "results" folder, where you can find the optimal hyperparameters for each dataset.
 
-Running experiment on ogbn-products (mini-batch training):
+Running MPNNs on ogbn-products (mini-batch training):
 ```bash
 sh products.sh
 ```
