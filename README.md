@@ -1,3 +1,5 @@
+# Node Classification
+
 ## Python environment setup with Conda
 
 Tested with Python 3.7, PyTorch 1.12.1, and PyTorch Geometric 2.3.1, dgl 1.0.2.
@@ -26,3 +28,10 @@ Running MPNNs on ogbn-products (mini-batch training):
 ```bash
 sh products.sh
 ```
+
+# Graph Classification
+
+```bash
+cd LRGB-dropout
+```
+
