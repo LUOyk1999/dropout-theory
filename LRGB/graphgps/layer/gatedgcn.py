@@ -70,6 +70,7 @@ class GatedGCNLayer(pyg_nn.conv.MessagePassing):
         """Feed Forward block.
         """
         x = self.ff_dropout1(self.act_fn_ff(self.ff_linear1(x)))
+        # return x
         return self.ff_dropout2(self.ff_linear2(x))
 
     def forward(self, batch):
@@ -115,17 +116,17 @@ class GatedGCNLayer(pyg_nn.conv.MessagePassing):
         batch.x = x
         batch.edge_attr = e
                 
-        # if self.layer_norm:
-        #     batch.x = self.norm1_local(batch.x, batch.batch)
-        # if self.batch_norm:
-        #     batch.x = self.norm1_local(batch.x)
+        if self.layer_norm:
+            batch.x = self.norm1_local(batch.x, batch.batch)
+        if self.batch_norm:
+            batch.x = self.norm1_local(batch.x)
         
-        # batch.x = batch.x + self._ff_block(batch.x)
+        batch.x = batch.x + self._ff_block(batch.x)
 
-        # if self.layer_norm:
-        #     batch.x = self.norm2(batch.x, batch.batch)
-        # if self.batch_norm:
-        #     batch.x = self.norm2(batch.x)
+        if self.layer_norm:
+            batch.x = self.norm2(batch.x, batch.batch)
+        if self.batch_norm:
+            batch.x = self.norm2(batch.x)
 
         return batch
 

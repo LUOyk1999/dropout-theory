@@ -138,6 +138,17 @@ if __name__ == '__main__':
         logging.info(f"[*] Run ID {run_id}: seed={cfg.seed}, "
                      f"split_index={cfg.dataset.split_index}")
         logging.info(f"    Starting now: {datetime.datetime.now()}")
+        
+        model = create_model()
+        cfg.params = params_count(model)
+        # logging.info('Num parameters: %s', cfg.params)
+        while cfg.params > 120000:
+            cfg.gnn.dim_inner -= 5
+            model = create_model()
+            cfg.params = params_count(model)
+            # logging.info('Num parameters: %s', cfg.params)
+            
+            
         # Set machine learning pipeline
         loaders = create_loader()
         loggers = create_logger()

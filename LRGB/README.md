@@ -29,12 +29,12 @@ conda clean --all
 ```bash
 conda activate graphgps
 
-python main.py --cfg configs/LRGB-tuned/peptides-func-dropout02.yaml --repeat 3 wandb.use False
+python main.py --cfg configs/LRGB-tuned/peptides-func.yaml --repeat 3 wandb.use False
 
-python main.py --cfg configs/LRGB-tuned/peptides-struct-dropout02.yaml --repeat 3 wandb.use False
+python main.py --cfg configs/LRGB-tuned/peptides-struct.yaml --repeat 3 wandb.use False
 
-python main.py --cfg configs/LRGB-tuned/peptides-func-dropout00.yaml --repeat 3 wandb.use False
+python main.py --cfg configs/LRGB-tuned/cifar10.yaml --repeat 2 seed 0 gnn.layers_mp 10 gnn.dropout 0.2 wandb.use False
 
-python main.py --cfg configs/LRGB-tuned/peptides-struct-dropout00.yaml --repeat 3 wandb.use False
+python main.py --cfg configs/LRGB-tuned/mnist.yaml --repeat 2 seed 0 gnn.layers_mp 9 gnn.dropout 0.2 wandb.use False
 ```
 
