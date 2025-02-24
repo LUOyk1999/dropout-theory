@@ -70,7 +70,7 @@ class CustomLogger(Logger):
             # TorchMetrics AUROC on GPU if available.
             auroc_score = auroc(pred_score.to(torch.device(cfg.accelerator)),
                                 true.to(torch.device(cfg.accelerator)),
-                                # task='binary'
+                                task='binary'
                                 )
             if self.test_scores:
                 # SK-learn version.
@@ -112,7 +112,7 @@ class CustomLogger(Logger):
             # TorchMetrics AUROC on GPU is much faster than sklearn for large ds
             res['auc'] = reformat(auroc(pred_score.to(torch.device(cfg.accelerator)),
                                         true.to(torch.device(cfg.accelerator)).squeeze(),
-                                        # task='multiclass',
+                                        task='multiclass',
                                         num_classes=pred_score.shape[1],
                                         average='macro'))
 
@@ -132,11 +132,11 @@ class CustomLogger(Logger):
         # MetricWrapper will remove NaNs and apply the metric to each target dim
         acc = MetricWrapper(metric='accuracy',
                             target_nan_mask='ignore-mean-label',
-                            # task='binary',
+                            task='binary',
                             cast_to_int=True)
         auroc = MetricWrapper(metric='auroc',
                               target_nan_mask='ignore-mean-label',
-                            #   task='binary',
+                              task='binary',
                               cast_to_int=True)
         # Send to GPU to speed up TorchMetrics if possible.
         true = true.to('cpu')
