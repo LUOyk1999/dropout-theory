@@ -1,8 +1,10 @@
-### Background
+# Node Classification
+
+## Background
 
 Based on the GPS and LRGB-tuned codebase: https://github.com/rampasek/GraphGPS and https://github.com/toenshoff/LRGB
 
-### Python environment setup with Conda
+## Python environment setup with Conda
 
 ```bash
 conda create -n graphgps python=3.10
@@ -25,7 +27,7 @@ conda clean --all
 ```
 
 
-### Running Training
+## Running Training
 ```bash
 conda activate graphgps
 
