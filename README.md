@@ -8,6 +8,6 @@ cd node-classification
 ## Graph Classification
 
 ```bash
-cd LRGB
+cd graph-classification
 ```
 
