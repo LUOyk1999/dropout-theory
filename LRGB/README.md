@@ -1,4 +1,4 @@
-# Node Classification
+# Graph Classification
 
 ## Background
 
