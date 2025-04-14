@@ -1,5 +1,7 @@
 # Beyond Random Masking: When Dropout meets Graph Convolutional Networks (ICLR 2025)
 
+[![OpenReview](https://img.shields.io/badge/OpenReview-PwxYoMvmvy-b31b1b.svg)](https://openreview.net/forum?id=PwxYoMvmvy) 
+
 ## Node Classification
 
 ```bash
