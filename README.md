@@ -41,3 +41,8 @@ url={https://openreview.net/forum?id=PwxYoMvmvy}
 }
 ```
 
+
+## Poster
+
+![dropout.png](https://raw.githubusercontent.com/LUOyk1999/images/refs/heads/main/images/dropout.png)
+
